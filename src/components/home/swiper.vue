@@ -40,6 +40,7 @@ export default {
     width 100%
     height 0
     padding-bottom 31.25%
+    margin-top .2rem
   .swiper-image
     width: 100%
 </style>

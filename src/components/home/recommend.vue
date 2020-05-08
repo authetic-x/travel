@@ -1,0 +1,82 @@
+<template>
+  <div>
+    <div class="recommend-title">热销推荐</div>
+    <ul>
+      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+        <div class="item-img-wrapper">
+          <img class="item-img" :src="item.imgUrl" alt="">
+        </div>
+        <div class="item-info">
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
+          <button class="item-btn">查看详情</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeRecommend',
+  data () {
+    return {
+      recommendList: [{
+        id: '0001',
+        imgUrl: '//img1.qunarzz.com/sight/p0/1807/f2/f27eacd19c648261a3.img.jpg_256x160_59695948.jpg',
+        title: '大连圣亚海洋世界',
+        desc: '浪漫大连首战，浪漫的海洋主题公园'
+      }, {
+        id: '0002',
+        imgUrl: '//img1.qunarzz.com/sight/p0/1807/f2/f27eacd19c648261a3.img.jpg_256x160_59695948.jpg',
+        title: '大连圣亚海洋世界',
+        desc: '浪漫大连首战，浪漫的海洋主题公园'
+      }, {
+        id: '0003',
+        imgUrl: '//img1.qunarzz.com/sight/p0/1807/f2/f27eacd19c648261a3.img.jpg_256x160_59695948.jpg',
+        title: '大连圣亚海洋世界',
+        desc: '浪漫大连首战，浪漫的海洋主题公园'
+      }]
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  @import '~styles/mixins.styl'
+  .recommend-title
+    line-height .8rem
+    background #eee
+    text-indent .2rem
+    margin-top .2rem
+  .item
+    overflow hidden
+    display flex
+    height 1.9rem
+    .item-img
+      width 1.7rem
+      height 1.7rem
+      padding .1rem
+    .item-info
+      flex: 1
+      padding .1rem
+      // 加上这一行才生效的原理是：
+      // 如果容器的宽度小于flex item本身的宽度，
+      // flex item会拒绝收缩，除非你给flex item 的min-width、
+      // max-width或width指定一个值
+      min-width 0
+      .item-title
+        line-height .54rem
+        font-size .32rem
+        ellipsis()
+      .item-desc
+        line-height .4rem
+        color #ccc
+        ellipsis()
+      .item-btn
+        background #ff9300
+        padding 0 .2rem
+        border-radius .06rem
+        margin-top .2rem
+        color #fff
+</style>
