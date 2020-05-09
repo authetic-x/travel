@@ -6,6 +6,6 @@ module.exports = {
             alias: {
                 'styles': resolve('src/assets/styles')
             }
-        }
+				},
     }
 }

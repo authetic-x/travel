@@ -7,14 +7,17 @@
         <ion-icon name="search-outline"></ion-icon> 输入城市/景点/游玩主题
       </div>
       <div class="header-right">
-        城市<ion-icon name="caret-down-outline"></ion-icon>
+        {{city}}<ion-icon name="caret-down-outline"></ion-icon>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    city: String
+  }
 }
 </script>
 

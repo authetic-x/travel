@@ -16,49 +16,11 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconList: Array
+  },
   data () {
     return {
-      imgUrls: [{
-        id: '001',
-        url: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        desc: '酒店'
-      }, {
-        id: '002',
-        url: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        desc: '机票'
-      }, {
-        id: '003',
-        url: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '火车票'
-      }, {
-        id: '004',
-        url: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '度假'
-      }, {
-        id: '005',
-        url: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        desc: '酒店'
-      }, {
-        id: '006',
-        url: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        desc: '机票'
-      }, {
-        id: '007',
-        url: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '火车票'
-      }, {
-        id: '008',
-        url: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '度假'
-      }, {
-        id: '009',
-        url: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '火车票'
-      }, {
-        id: '010',
-        url: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '度假'
-      }],
       swiperOptions: {
         loop: true
       }
@@ -67,7 +29,7 @@ export default {
   computed: {
     pages () {
       const pages = []
-      this.imgUrls.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
