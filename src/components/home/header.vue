@@ -6,9 +6,11 @@
       <div class="header-input">
         <ion-icon name="search-outline"></ion-icon> 输入城市/景点/游玩主题
       </div>
-      <div class="header-right">
-        {{city}}<ion-icon name="caret-down-outline"></ion-icon>
-      </div>
+      <router-link to="/city">
+        <div class="header-right">
+          {{city}}<ion-icon name="caret-down-outline"></ion-icon>
+        </div>
+      </router-link>
   </div>
 </template>
 
@@ -55,4 +57,5 @@ export default {
     text-align center
     align-items center
     padding-right 10px
+    color #fff
 </style>
