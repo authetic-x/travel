@@ -7,7 +7,6 @@ import 'styles/reset.css'
 import 'styles/border.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
-import './mock'
 
 Vue.use(VueAwesomeSwiper)
 

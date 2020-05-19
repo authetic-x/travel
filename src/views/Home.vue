@@ -42,7 +42,7 @@ export default {
     },
     getHomeInfoSuc (res) {
       res = res.data
-      if (res.res) {
+      if (res.ret) {
         this.city = res.data.city
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList
