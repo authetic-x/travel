@@ -6,7 +6,7 @@
       <div class="header-input">
         <ion-icon name="search-outline"></ion-icon> 输入城市/景点/游玩主题
       </div>
-      <router-link to="/city">
+      <router-link to="/city" class="link-wrap">
         <div class="header-right">
           {{city}}<ion-icon name="caret-down-outline"></ion-icon>
         </div>
@@ -15,10 +15,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -51,12 +53,15 @@ export default {
     padding 5px
   ion-icon
     font-size 20px
+  .link-wrap
+    display flex
+    justify-content center
   .header-right
     display flex
-    width 1.24rem
+    min-width 1.04rem
     justify-content flex-end
     text-align center
     align-items center
-    padding-right 10px
+    padding 0 .1rem
     color #fff
 </style>

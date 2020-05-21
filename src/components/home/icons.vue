@@ -22,7 +22,8 @@ export default {
   data () {
     return {
       swiperOptions: {
-        loop: true
+        loop: true,
+        initialSlide: 1
       }
     }
   },

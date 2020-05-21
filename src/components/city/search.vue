@@ -11,7 +11,12 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword || focused">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">
+        <li
+          class="search-item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
           {{item.name}}
         </li>
         <li class="search-item border-bottom" v-show="hasNoData">
@@ -36,6 +41,13 @@ export default {
       list: [],
       timer: null,
       focused: false
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      // this.keyword = ''
+      this.$router.push('/')
     }
   },
   computed: {
@@ -100,4 +112,6 @@ export default {
       line-height .62rem
       padding-left .2rem
       background #fff
+    .search-item:hover
+      background #eee
 </style>
