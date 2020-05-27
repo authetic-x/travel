@@ -1,6 +1,7 @@
 const {resolve} = require('path')
 const indexJson = require('./src/mock/index.json')
 const cityJson = require('./src/mock/city.json')
+const detailJson = require('./src/mock/detail.json')
 
 module.exports = {
     configureWebpack: {
@@ -17,6 +18,10 @@ module.exports = {
 
 						app.get('/api/city', (_, res) => {
 							res.json(cityJson)
+						})
+
+						app.get('/api/detail', (_, res) => {
+							res.json(detailJson)
 						})
 					}
 				}
